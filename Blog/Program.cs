@@ -25,7 +25,7 @@ internal class Program
 
     public static void ReadUsers(SqlConnection connection)
     {
-        var repository = new UserRepository(connection);
+        var repository = new Repository<User>(connection);
         var users = repository.Get();
 
         foreach (var user in users)
@@ -34,7 +34,7 @@ internal class Program
 
     public static void ReadRoles(SqlConnection connection)
     {
-        var repository = new RoleRepository(connection);
+        var repository = new Repository<Role>(connection);
         var roles = repository.Get();
 
         foreach (var role in roles)
