@@ -13,7 +13,7 @@ internal class Program
         //ReadUser();
         //CreateUser();
         //UpdateUser();
-        DeleteUser();
+        //DeleteUser();
     }
 
     public static void ReadUsers()
