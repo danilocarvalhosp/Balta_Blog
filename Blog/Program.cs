@@ -13,7 +13,7 @@ internal class Program
         var connection = new SqlConnection(CONNECTION_STRING);
         connection.Open();
 
-        //ReadUsers(connection);
+        ReadUsers(connection);
         //ReadRoles(connection);
         //ReadTags(connection);
         //ReadUser(connection);
@@ -38,7 +38,13 @@ internal class Program
         var items = repository.Get();
 
         foreach (var item in items)
+        {
             Console.WriteLine(item.Name);
+            foreach (var role in item.Roles)
+            {
+                Console.WriteLine($" - {role.Name}");
+            }
+        }
     }
 
     public static void ReadRoles(SqlConnection connection)
